@@ -80,14 +80,9 @@ claude update
 
 ## (三) 配置 Claude Code
 
-### 方法一 (强强强烈推荐!!!) : 
-使用教程网页右上角一键自动配置命令行版进行配置
 
-or
 
-使用教程网页右上角小白一键配置软件（桌面版）进行配置
-
-### 方法二（推荐）：通过文件设置
+### 方法一（推荐）：通过文件设置
 
 编辑文件 `~/.claude/settings.json` 文件添加以下内容(如果没有settings.json文件，请自行创建，不需要时可随意删除，不影响claude使用)：
 
@@ -99,7 +94,7 @@ or
 {
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "你的API密钥",
-    "ANTHROPIC_BASE_URL": "https://www.88code.ai/api",
+    "ANTHROPIC_BASE_URL": "你的BASE_URL",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   },
   "permissions": {
@@ -109,7 +104,7 @@ or
 }
 ```
 
-### 方法三：通过环境变量设置
+### 方法二：通过环境变量设置
 
 为了让 Claude Code 连接到你的中转服务，需要设置两个环境变量：
 
@@ -118,7 +113,7 @@ or
 在 PowerShell 中运行以下命令：
 
 ```powershell
-$env:ANTHROPIC_BASE_URL = "https://www.88code.ai/api"
+$env:ANTHROPIC_BASE_URL = "你的BASE_URL"
 $env:ANTHROPIC_AUTH_TOKEN = "你的API密钥"
 ```
 
@@ -131,7 +126,7 @@ $env:ANTHROPIC_AUTH_TOKEN = "你的API密钥"
 
 ```powershell
 # 设置用户级环境变量（永久生效）
-[System.Environment]::SetEnvironmentVariable("ANTHROPIC_BASE_URL", "https://www.88code.ai/api", [System.EnvironmentVariableTarget]::User)
+[System.Environment]::SetEnvironmentVariable("ANTHROPIC_BASE_URL", "你的BASE_URL", [System.EnvironmentVariableTarget]::User)
 [System.Environment]::SetEnvironmentVariable("ANTHROPIC_AUTH_TOKEN", "你的API密钥", [System.EnvironmentVariableTarget]::User)
 ```
 
@@ -166,7 +161,7 @@ echo %ANTHROPIC_AUTH_TOKEN%
 **预期输出示例：**
 
 ```
-https://www.88code.org/api
+你的BASE_URL
 cr_xxxxxxxxxxxxxxxxxx
 ```
 
